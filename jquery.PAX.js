@@ -46,9 +46,12 @@
 			setData(data);
 		}
 	};
+	
 	var builtinActions = {
 			html : function(oJob){	$(oJob.d).html(oJob.c);},
-			append : function(oJob){$(oJob.d).append(oJob.c);}	
+			append : function(oJob){$(oJob.d).append(oJob.c);},
+			prepend : function(oJob){$(oJob.d).prepend(oJob.c);},
+			console : function(oJob){if(typeof console =="object")console.log(oJob[0]);}
 	};
 	
 	var defaultData = {
