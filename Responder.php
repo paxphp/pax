@@ -1,7 +1,7 @@
 <?php
 namespace dsx\PAX;
 
-class Responder{
+abstract class Responder{
 
 	private $sID = 'task';
 
