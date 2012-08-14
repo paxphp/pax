@@ -2,17 +2,19 @@
 	
 	var initAjax = function(){
 		$(document).ajaxSuccess(function ( e, xhr, settings ){
-			var json = $.parseJSON(xhr.responseText);
-			if( typeof json === 'object'){
-				$.each(json, function(responseID, oJobs){
-					if( typeof oJobs === 'object'){
-						$.each(oJobs, function(index, oJob){
-							if ( typeof oJob === 'object') {
-								process(oJob);
-							}					
-						});	
-					}
-				});
+			if(xhr.responseText){
+				var json = $.parseJSON(xhr.responseText);
+				if( typeof json === 'object'){
+					$.each(json, function(responseID, oJobs){
+						if( typeof oJobs === 'object'){
+							$.each(oJobs, function(index, oJob){
+								if ( typeof oJob === 'object') {
+									process(oJob);
+								}					
+							});	
+						}
+					});
+				}
 			}
 		});
 	};
@@ -48,10 +50,6 @@
 	};
 	
 	var builtinActions = {
-			html : function(oJob){	$(oJob.d).html(oJob.c);},
-			append : function(oJob){$(oJob.d).append(oJob.c);},
-			prepend : function(oJob){$(oJob.d).prepend(oJob.c);},
-			console : function(oJob){if(typeof console =="object")console.log(oJob[0]);}
 	};
 	
 	var defaultData = {
