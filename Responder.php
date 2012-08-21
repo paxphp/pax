@@ -1,5 +1,5 @@
 <?php
-namespace dsx\PAX;
+namespace dsx\pax;
 
 abstract class Responder{
 
