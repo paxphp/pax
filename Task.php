@@ -1,5 +1,5 @@
 <?php
-namespace dsx\pax;
+namespace Dsx\Pax;
 
 class Task{
 
