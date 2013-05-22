@@ -1,0 +1,20 @@
+{
+	"name" : "dsx/pax",
+	"type" : "library",
+	"keywords" : [
+		"php",
+		"ajax"
+	],
+	"license" : [
+		"MIT"
+	],
+	"require" : {
+		"php" : ">=5.4"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Dsx\\Pax" : ""
+		}
+	},
+	"minimum-stability" : "dev"
+}
