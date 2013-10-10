@@ -23,3 +23,5 @@ Although PAX was developed with below requirements it's fairly easy to amend the
 * PHP 5.4+
 * jQuery 1.7+
 * AJAX enabled browser
+* 
+Enjoy!
