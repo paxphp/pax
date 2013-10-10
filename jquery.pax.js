@@ -3,17 +3,21 @@
 	var initAjax = function(){
 		$(document).ajaxSuccess(function ( e, xhr, settings ){
 			if(xhr.responseText){
-				var json = $.parseJSON(xhr.responseText);
-				if( typeof json === 'object'){
-					$.each(json, function(responseID, oJobs){
-						if( typeof oJobs === 'object'){
-							$.each(oJobs, function(index, oJob){
-								if ( typeof oJob === 'object') {
-									process(oJob);
-								}					
-							});	
-						}
-					});
+				try{
+					var json = $.parseJSON(xhr.responseText);
+					if( typeof json === 'object'){
+						$.each(json, function(responseID, oJobs){
+							if( typeof oJobs === 'object'){
+								$.each(oJobs, function(index, oJob){
+									if ( typeof oJob === 'object') {
+										process(oJob);
+									}					
+								});	
+							}
+						});
+					}
+				} catch(e) {
+					return false;
 				}
 			}
 		});
