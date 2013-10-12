@@ -13,6 +13,10 @@
 		"robloach/component-installer": "*",
 		"components/jquery": ">=1.9"
 	},
+	"suggest" : {
+		"robloach/component-installer": "*",
+		"components/jquery": ">=1.9"
+	},
 	"autoload" : {
 		"psr-0" : {
 			"Dsx\\Pax" : "src"
