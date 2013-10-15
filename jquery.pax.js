@@ -65,7 +65,7 @@
 			console		: function(oJob){	if(typeof console =="object")console.log(oJob[0]);	},
 			alert		: function(oJob){	alert(oJob[0]);	},
 			script		: function(oJob){	$(document).ready(function() {jQuery.globalEval(oJob.c);});	},
-			css			: function(oJob){	$(oJob.d).css(oJob.p, oJob.v);	},
+			css		: function(oJob){	$(oJob.d).css(oJob.p, oJob.v);	},
 			addClass	: function(oJob){	$(oJob.d).addClass(oJob.c);	},
 			removeClass	: function(oJob){	$(oJob.d).removeClass((typeof oJob.c === "string")?oJob.c:undefined);	},
 			_debug		: function(oJob){	console.log(oJob);	}
