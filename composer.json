@@ -1,9 +1,12 @@
 {
 	"name" : "dsx/pax",
 	"type" : "library",
+	"description" : "PAX provides easy interacting between PHP and AJAX while it reduces at the same time written code in Javascript and improves the way of managing and manipulating DOM elements from the backend in an object oriented style.",
+	"homepage": "https://github.com/dsNick/Pax",
 	"keywords" : [
 		"php",
-		"ajax"
+		"ajax",
+		"xhr"
 	],
 	"license" : [
 		"MIT"
@@ -11,16 +14,18 @@
 	"require" : {
 		"php" : ">=5.4"
 	},
+	
 	"suggest" : {
 		"robloach/component-installer": "*",
-		"components/jquery": ">=1.9"
+		"components/jquery": "~1.9"
 	},
+	
 	"autoload" : {
-		"psr-0" : {
-			"Dsx\\Pax" : "src"
+		"psr-4" : {
+			"Dsx\\Pax\\" : ""
 		}
 	},
-	"minimum-stability" : "dev",
+
 	"extra": {
 	   "component": {
 	     "scripts": [
