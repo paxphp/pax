@@ -2,7 +2,7 @@
 	"name" : "dsx/pax",
 	"type" : "library",
 	"description" : "PAX provides easy interacting between PHP and AJAX while it reduces at the same time written code in Javascript and improves the way of managing and manipulating DOM elements from the backend in an object oriented style.",
-	"homepage": "https://github.com/dsNick/Pax",
+	"homepage": "https://github.com/nickdietel/Pax.git",
 	"keywords" : [
 		"php",
 		"ajax",
