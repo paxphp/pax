@@ -1,5 +1,5 @@
 <?php
-namespace Dsx\Pax;
+namespace Pax;
 
 class Response extends Responder{
 	
