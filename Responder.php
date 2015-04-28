@@ -43,7 +43,7 @@ abstract class Responder{
 	 * @param array $aParams Parameters to be forwarded to the action
 	 * @param String $sAction Name of the action you want to add
 	 */
-	protected function addTask(array $aParams = array(), $sAction=null){
+	protected function addTask(array $aParams = [], $sAction=null){
 		$this->aTasks[$this->getID()][] = new Task((is_null($sAction)?debug_backtrace()[1]['function']:$sAction), (count($aParams)?$aParams:debug_backtrace()[1]['args']));
 	}
 

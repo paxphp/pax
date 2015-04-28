@@ -3,7 +3,7 @@ namespace Pax;
 
 class Task{
 
-	public function __construct($sAction, array $aParams = array()){
+	public function __construct($sAction, array $aParams = []){
 		$this->_do = $sAction;
 		$this->applyParams($aParams);
 	}
