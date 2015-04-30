@@ -2,8 +2,12 @@
 namespace Pax;
 
 abstract class Responder{
+    
+    public function __construct($sResponseID = 'pax'){
+        $this->setID($sResponseID);
+    }
 
-	private $sID = 'task';
+	private $sID;
 
 	/**
 	 *    Set the sID value
