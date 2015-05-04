@@ -63,4 +63,8 @@ class Response extends Responder{
 		$this->addTask(['d'=>$sDestination, 'c'=>$sClassName]);
 		return $this;
 	}
+	public function remove($sDestination){
+	    $this->addTask(['d'=>$sDestination]);
+	    return $this;
+	}
 }

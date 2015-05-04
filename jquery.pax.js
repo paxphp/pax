@@ -34,6 +34,7 @@
 		css		: function(oJob){	$(oJob.d).css(oJob.p, oJob.v);	},
 		addClass	: function(oJob){	$(oJob.d).addClass(oJob.c);	},
 		removeClass	: function(oJob){	$(oJob.d).removeClass((typeof oJob.c === "string")?oJob.c:undefined);	},
+		remove		: function(oJob){	$(oJob.d).remove();	},
 		_debug		: function(oJob){	console.log(oJob);	}
 	};
 	
