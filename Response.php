@@ -67,4 +67,8 @@ class Response extends Responder{
 	    $this->addTask(['d'=>$sDestination]);
 	    return $this;
 	}
+	public function replaceWith($sDestination, $sContent=null){
+	    $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
+	    return $this;
+	}
 }
