@@ -50,7 +50,7 @@
         			var json = $.parseJSON(xhr.responseText);
         			if( typeof json === 'object'){
         			    $.each(json, function(responseId, oJobs){
-        				if( responseId == $.fn.pax.settings.responseId && typeof oJobs === 'object' && oJobs.length > 0){
+        				if( responseId == $.fn.pax.settings.responseId && typeof oJobs === 'object'){
         				    $.each(oJobs, function(index, oJob){
         					if ( typeof oJob === 'object') {
         					    process(oJob);
