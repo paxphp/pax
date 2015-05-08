@@ -46,9 +46,23 @@ abstract class Responder{
 	 * Adds a new tasks to the tasks array
 	 * @param array $aParams Parameters to be forwarded to the action
 	 * @param String $sAction Name of the action you want to add
+	 * @return Task
 	 */
 	protected function addTask(array $aParams = [], $sAction=null){
-		$this->aTasks[$this->getID()][] = new Task((is_null($sAction)?debug_backtrace()[1]['function']:$sAction), (count($aParams)?$aParams:debug_backtrace()[1]['args']));
+	    $oTask = new Task((is_null($sAction)?debug_backtrace()[1]['function']:$sAction), (count($aParams)?$aParams:debug_backtrace()[1]['args']));
+		$this->aTasks[$this->getID()][$oTask->_id] = $oTask;
+		return $oTask; 
+	}
+	
+	/**
+	 * Removes a task from the stack
+	 * @param id|Task $TaskId
+	 */
+	protected function removeTask($TaskId){
+	    if(is_object($TaskId))
+	       $TaskId = $TaskId->_id;
+	    if(isset($this->aTasks[$this->getID()][$TaskId]))
+	        unset($this->aTasks[$this->getID()][$TaskId]);
 	}
 
 	/**
