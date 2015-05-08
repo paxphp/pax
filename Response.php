@@ -54,4 +54,9 @@ class Response extends Responder{
 	public function replaceWith($sDestination, $sContent=null){
 	    return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
+	public function when($condition, Task $true, Task $false = NULL){
+	    $this->removeTask($true);
+	    $this->removeTask($false);
+	    return $this->addTask(['c'=>$condition, 't'=>$true, 'f'=>$false]);
+	}
 }

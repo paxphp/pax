@@ -36,7 +36,8 @@
 		removeClass	: function(oJob){	$(oJob.d).removeClass((typeof oJob.c === "string")?oJob.c:undefined);	},
 		remove		: function(oJob){	$(oJob.d).remove();		},
 		replaceWith	: function(oJob){	$(oJob.d).replaceWith(oJob.c);	},
-		_debug		: function(oJob){	console.log(oJob);		}
+		_debug		: function(oJob){	console.log(oJob);		},
+		when		: function(oJob){	eval( "if( " + oJob.c + "){ process(oJob.t); }else{ process(oJob.f) }" ); }
 	};
 	
 	function init( options ){
@@ -69,7 +70,7 @@
 	};
 	
 	function process(oJob){
-	    if(typeof $.fn.pax.actions[oJob._do] == 'function'){
+	    if(typeof oJob == 'object' && typeof $.fn.pax.actions[oJob._do] == 'function'){
 		$.fn.pax.actions[oJob._do](oJob);
 	    }
 	};
