@@ -4,71 +4,54 @@ namespace Pax;
 class Response extends Responder{
 	
 	public function bind($sDestination, $sEvent, $sFunction){
-		$this->addTask(['d'=>$sDestination, 'e'=>$sEvent,'f'=>$sFunction]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'e'=>$sEvent,'f'=>$sFunction]);
 	}
 	public function unbind($sDestination, $sEvent){
-		$this->addTask(['d'=>$sDestination, 'e'=>$sEvent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'e'=>$sEvent]);
 	}
 	public function html($sDestination, $sContent){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sContent], 'html');
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent], 'html');
 	}
 	public function append($sDestination, $sContent){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 	public function prepend($sDestination, $sContent){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 	public function before($sDestination, $sContent){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 	public function after($sDestination, $sContent){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 	public function attr($sDestination, $sAttribute, $sContent){
-		$this->addTask(['d'=>$sDestination, 'a'=>$sAttribute, 'c'=>$sContent]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'a'=>$sAttribute, 'c'=>$sContent]);
 	}
 	public function console($sContent){
-		$this->addTask();
-		return $this;
+		return $this->addTask();
 	}
 	public function alert($sContent){
-		$this->addTask();
-		return $this;
+		return $this->addTask();
 	}
 	public function script($sContent){
-		$this->addTask(['c'=>$sContent]);
-		return $this;
+		return $this->addTask(['c'=>$sContent]);
 	}
 	public function _debug($args){
-		$this->addTask();
-		return $this;
+		return $this->addTask();
 	}
 	public function css($sDestination, $sPropertyName, $sValue){
-		$this->addTask(['d'=>$sDestination, 'p'=>$sPropertyName, 'v'=>$sValue]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'p'=>$sPropertyName, 'v'=>$sValue]);
 	}
 	public function addClass($sDestination, $sClassName){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sClassName]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sClassName]);
 	}
 	public function removeClass($sDestination, $sClassName=null){
-		$this->addTask(['d'=>$sDestination, 'c'=>$sClassName]);
-		return $this;
+		return $this->addTask(['d'=>$sDestination, 'c'=>$sClassName]);
 	}
 	public function remove($sDestination){
-	    $this->addTask(['d'=>$sDestination]);
-	    return $this;
+	    return $this->addTask(['d'=>$sDestination]);
 	}
 	public function replaceWith($sDestination, $sContent=null){
-	    $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
-	    return $this;
+	    return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 }
