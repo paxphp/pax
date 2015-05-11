@@ -4,7 +4,7 @@ namespace Pax;
 class Task{
 
 	public function __construct($sAction, array $aParams = []){
-		$this->_id = uniqid('pax_', true);
+		$this->_id = uniqid();
 		$this->_do = $sAction;
 		$this->applyParams($aParams);
 	}
