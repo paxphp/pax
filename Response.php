@@ -51,6 +51,15 @@ class Response extends Responder{
 	public function remove($sDestination){
 	    return $this->addTask(['d'=>$sDestination]);
 	}
+	public function toggle($sDestination){
+	    return $this->addTask(['d'=>$sDestination]);
+	}
+	public function show($sDestination){
+	    return $this->addTask(['d'=>$sDestination]);
+	}
+	public function hide($sDestination){
+	    return $this->addTask(['d'=>$sDestination]);
+	}
 	public function replaceWith($sDestination, $sContent=null){
 	    return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}

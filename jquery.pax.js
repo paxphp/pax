@@ -35,6 +35,9 @@
 		addClass	: function(oJob){	$(oJob.d).addClass(oJob.c);	},
 		removeClass	: function(oJob){	$(oJob.d).removeClass((typeof oJob.c === "string")?oJob.c:undefined);	},
 		remove		: function(oJob){	$(oJob.d).remove();		},
+		hide		: function(oJob){	$(oJob.d).hide();		},
+		show		: function(oJob){	$(oJob.d).show();		},
+		toggle		: function(oJob){	$(oJob.d).toggle();		},
 		replaceWith	: function(oJob){	$(oJob.d).replaceWith(oJob.c);	},
 		_debug		: function(oJob){	console.log(oJob);		},
 		when		: function(oJob){	eval( "if( " + oJob.c + "){ process(oJob.t); }else{ process(oJob.f) }" ); }
