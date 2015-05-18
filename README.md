@@ -10,12 +10,19 @@ Although PAX was inspired by the awesome xajax-project it is using a slightly di
 
 ## Installation
 
-Via composer
+**via composer**
 ```
 composer require pax/pax:dev-master
 ```
 
-Via Archive (latest)
+if you're already using the composer asset plugin you can require below to install the java script 
+```
+"require" : {
+ "bower-asset/jquery-pax": "dev-master"
+}
+```
+
+**via archive (latest)**
 
 https://github.com/paxphp/pax/archive/master.zip
 
