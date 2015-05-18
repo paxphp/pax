@@ -1,0 +1,18 @@
+{
+  "name": "jquery-pax",
+  "version": "1.6.6",
+  "main": ["jquery.pax.js"],
+  "homepage": "https://github.com/paxphp/pax",
+  "authors": [
+    "Nick Dietel <nick.dietel@gmail.com>"
+  ],
+  "description": "PHP Ajax Extension - PAX provides easy interacting between PHP and AJAX while it reduces at the same time written code in Javascript and improves the way of managing and manipulating DOM elements from the backend in an object oriented style.",
+  "keywords": ["php", "ajax", "jquery"],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "ignore": [
+    "!jquery.pax.js"
+  ]
+}
