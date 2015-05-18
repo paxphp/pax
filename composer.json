@@ -17,7 +17,9 @@
 	
 	"suggest" : {
 		"robloach/component-installer": "*",
-		"components/jquery": ">=1.7"
+		"components/jquery": ">=1.7",
+		"fxp/composer-asset-plugin":"~1.0",
+		"bower-asset/jquery-pax": "dev-master"
 	},
 	
 	"autoload" : {
@@ -31,6 +33,12 @@
 	     "scripts": [
 	       "jquery.pax.js"
 	     ]
-	   }
+	   },
+	   "asset-repositories": {
+            "bower-asset/jquery-pax": {
+                "type": "bower-vcs",
+                "url": "https://github.com/paxphp/pax.git"
+            }
+        }
 	 }
 }
