@@ -1,6 +1,8 @@
 <?php
 namespace Pax;
 
+use Pax\Tasks as t;
+
 class Response extends Responder{
 	
 	public function bind($sDestination, $sEvent, $sFunction){
@@ -31,7 +33,7 @@ class Response extends Responder{
 		return $this->addTask();
 	}
 	public function alert($sContent){
-		return $this->addTask();
+	    $this->addTaskObject(new t\AlertTask($sContent));
 	}
 	public function script($sContent){
 		return $this->addTask(['c'=>$sContent]);

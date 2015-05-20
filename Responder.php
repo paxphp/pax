@@ -54,6 +54,11 @@ abstract class Responder{
 		return $oTask; 
 	}
 	
+	protected function addTaskObject(Tasks\AbstractTask $oTask){
+	    $this->aTasks[$this->getID()][$oTask->_id] = $oTask;
+	    return $oTask;
+	}
+	
 	/**
 	 * Removes a task from the stack
 	 * @param id|Task $TaskId
