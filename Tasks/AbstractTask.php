@@ -14,6 +14,9 @@ abstract class AbstractTask{
             $aParams = debug_backtrace()[1]['args'];
         }
         
+        if(is_string($aParams))
+            $aParams = [$aParams];
+        
 		$this->_id = uniqid();
 		$this->_do = $sAction;
 		$this->applyParams($aParams);
@@ -42,9 +45,11 @@ abstract class AbstractTask{
 		$this->$sAttribute = $mValue;
 	}
 	
-	static public function create(){
+	static protected function init(){
 	    $reflect  = new \ReflectionClass(get_called_class());
 	    return $reflect->newInstanceArgs(func_get_args());
 	}
+	
+	static public function create(){}
 
 }
