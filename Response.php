@@ -27,7 +27,7 @@ class Response extends Responder{
 		return $this->addTask(['d'=>$sDestination, 'c'=>$sContent]);
 	}
 	public function attr($sDestination, $sAttribute, $sContent){
-		return $this->addTask(['d'=>$sDestination, 'a'=>$sAttribute, 'c'=>$sContent]);
+		return $this->addTask(t\AttrTask::create($sDestination, $sAttribute, $sContent));
 	}
 	public function console($sContent){
 		return $this->addTask();
