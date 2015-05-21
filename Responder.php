@@ -42,23 +42,24 @@ abstract class Responder{
 	protected function getTasks() {
 		return $this->aTasks;
 	}
+
 	/**
 	 * Adds a new tasks to the tasks array
-	 * @param array $aParams Parameters to be forwarded to the action
+	 * @param mixed $aParams Parameters to be forwarded to the action
 	 * @param String $sAction Name of the action you want to add
 	 * @return Task
 	 */
-	protected function addTask(array $aParams = [], $sAction=null){
-	    $oTask = new Task((is_null($sAction)?debug_backtrace()[1]['function']:$sAction), (count($aParams)?$aParams:debug_backtrace()[1]['args']));
-		$this->aTasks[$this->getID()][$oTask->_id] = $oTask;
-		return $oTask; 
+	protected function addTask($mParams = [], $sAction=null){
+	    if(is_object($mParams) && get_parent_class($mParams) == 'Pax\Tasks\AbstractTask'){
+	        $this->aTasks[$this->getID()][$mParams->_id] = $mParams;
+	        return $mParams;
+	    }elseif(is_array($mParams)){
+	        $oTask = new Task((is_null($sAction)?debug_backtrace()[1]['function']:$sAction), (count($mParams)?$mParams:debug_backtrace()[1]['args']));
+	        $this->aTasks[$this->getID()][$oTask->_id] = $oTask;
+            return $oTask;
+	    }
 	}
-	
-	protected function addTaskObject(Tasks\AbstractTask $oTask){
-	    $this->aTasks[$this->getID()][$oTask->_id] = $oTask;
-	    return $oTask;
-	}
-	
+
 	/**
 	 * Removes a task from the stack
 	 * @param id|Task $TaskId
