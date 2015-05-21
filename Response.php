@@ -33,7 +33,7 @@ class Response extends Responder{
 		return $this->addTask();
 	}
 	public function alert($sContent){
-	    return $this->addTaskObject(t\AlertTask::create('test'));
+	    return $this->addTask(t\AlertTask::create($sContent));
 	}
 	public function script($sContent){
 		return $this->addTask(['c'=>$sContent]);
