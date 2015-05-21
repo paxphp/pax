@@ -39,7 +39,7 @@ class Response extends Responder{
 		return $this;
 	}
 	public function console($sContent){
-		$this->addTask();
+		$this->addTask(t\ConsoleTask::create($sContent));
 		return $this;
 	}
 	public function alert($sContent){
