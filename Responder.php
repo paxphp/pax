@@ -25,7 +25,7 @@ abstract class Responder{
 		return $this->sID;
 	}
 
-	private $aTasks = array();
+	private $aTasks = [];
 
 	/**
 	 *    Set the tasks array
