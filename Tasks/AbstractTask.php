@@ -42,4 +42,9 @@ abstract class AbstractTask{
 		$this->$sAttribute = $mValue;
 	}
 	
+	static public function create(){
+	    $reflect  = new \ReflectionClass(get_called_class());
+	    return $reflect->newInstanceArgs(func_get_args());
+	}
+
 }
