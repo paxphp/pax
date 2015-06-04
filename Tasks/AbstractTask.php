@@ -6,7 +6,7 @@ abstract class AbstractTask{
 	public function __construct(){
         $oClass = new \ReflectionClass(get_called_class());
         
-        $sAction = strtolower(preg_replace('/Task$/', '', $oClass->getShortName()));
+        $sAction = lcfirst (preg_replace('/Task$/', '', $oClass->getShortName()));
         $aParams = [];
         if(isset(debug_backtrace()[0]['args'][0])){
             $aParams = debug_backtrace()[0]['args'][0];
