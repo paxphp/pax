@@ -1,6 +1,5 @@
 {
   "name": "jquery-pax",
-  "version": "1.6.6",
   "main": ["jquery.pax.js"],
   "homepage": "https://github.com/paxphp/pax",
   "authors": [
