@@ -33,7 +33,7 @@
 		script		: function(oJob){	jQuery.globalEval(oJob.c);	},
 		css		: function(oJob){	$(oJob.d).css(oJob.p, oJob.v);	},
 		addClass	: function(oJob){	$(oJob.d).addClass(oJob.c);	},
-		removeClass	: function(oJob){	$(oJob.d).removeClass((typeof oJob.c === "string")?oJob.c:undefined);	},
+		removeClass	: function(oJob){	if(typeof oJob.c === "string"){ $(oJob.d).removeClass(oJob.c); }else{ $(oJob.d).removeClass(); }	},
 		remove		: function(oJob){	$(oJob.d).remove();		},
 		hide		: function(oJob){	$(oJob.d).hide();		},
 		show		: function(oJob){	$(oJob.d).show();		},
