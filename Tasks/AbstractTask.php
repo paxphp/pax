@@ -50,6 +50,6 @@ abstract class AbstractTask{
 	    return $reflect->newInstanceArgs(func_get_args());
 	}
 	
-	static public function create(){}
+	//static public function create(){}
 
 }
