@@ -3,8 +3,6 @@ namespace Pax;
 
 class Task{
     
-    use TaskTrait;
-
 	public function __construct($mParams = [], $sAction = NULL){
         
         if(is_null($sAction)){
@@ -49,6 +47,11 @@ class Task{
 	
 	public function __set($sAttribute, $mValue){
 		$this->$sAttribute = $mValue;
+	}
+	
+	static protected function init(){
+	    $reflect  = new \ReflectionClass(get_called_class());
+	    return $reflect->newInstanceArgs(func_get_args());
 	}
 	
 }
