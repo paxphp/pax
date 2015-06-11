@@ -54,9 +54,7 @@ abstract class Responder{
 	        $this->aTasks[$this->getID()][$mParams->_id] = $mParams;
 	        return $mParams;
 	    }elseif(is_array($mParams)){
-	        $oTask = \Pax\Task::create();
-	        $oTask->_do = (is_null($sAction)?debug_backtrace()[1]['function']:$sAction);
-	        $oTask->applyParams((count($mParams)?$mParams:debug_backtrace()[1]['args']));
+	        $oTask = new Task((count($mParams)?$mParams:debug_backtrace()[1]['args']), (is_null($sAction)?debug_backtrace()[1]['function']:$sAction));
 	        $this->aTasks[$this->getID()][$oTask->_id] = $oTask;
             return $oTask;
 	    }

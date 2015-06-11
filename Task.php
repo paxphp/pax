@@ -5,12 +5,16 @@ class Task{
     
     use TaskTrait;
 
-	public function __construct(){
-        $oClass = new \ReflectionClass(get_called_class());
+	public function __construct($mParams = [], $sAction = NULL){
         
-        $sAction = lcfirst (preg_replace('/Task$/', '', $oClass->getShortName()));
+        if(is_null($sAction)){
+	       $oClass = new \ReflectionClass(get_called_class());
+           $sAction = lcfirst (preg_replace('/Task$/', '', $oClass->getShortName()));
+        }
         $aParams = [];
-        if(isset(debug_backtrace()[0]['args'][0])){
+        if(is_array($mParams) && count($mParams)){
+            $aParams = $mParams;
+        }elseif(isset(debug_backtrace()[0]['args'][0])){
             $aParams = debug_backtrace()[0]['args'][0];
         }elseif(isset(debug_backtrace()[1]['args'][0]) ){
             $aParams = debug_backtrace()[1]['args'];
