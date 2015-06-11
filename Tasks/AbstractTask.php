@@ -24,7 +24,7 @@ abstract class AbstractTask{
 		$this->applyParams($aParams);
 	}
 	
-	protected function applyParams(array $aParams){
+	public function applyParams(array $aParams){
 		foreach ($aParams as $aAttribute => $mValue){
 			$this->$aAttribute = $mValue;
 		}
