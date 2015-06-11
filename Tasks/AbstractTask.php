@@ -2,6 +2,8 @@
 namespace Pax\Tasks;
 
 abstract class AbstractTask{
+    
+    use TaskTrait;
 
 	public function __construct(){
         $oClass = new \ReflectionClass(get_called_class());
@@ -45,11 +47,4 @@ abstract class AbstractTask{
 		$this->$sAttribute = $mValue;
 	}
 	
-	static protected function init(){
-	    $reflect  = new \ReflectionClass(get_called_class());
-	    return $reflect->newInstanceArgs(func_get_args());
-	}
-	
-	//static public function create(){}
-
 }
