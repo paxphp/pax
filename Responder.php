@@ -66,9 +66,9 @@ abstract class Responder{
 	 */
 	protected function removeTask($TaskId){
 	    if(is_object($TaskId))
-	       $TaskId = $TaskId->_id;
+            $TaskId = $TaskId->_id;
 	    if(isset($this->aTasks[$this->getID()][$TaskId]))
-	        unset($this->aTasks[$this->getID()][$TaskId]);
+            unset($this->aTasks[$this->getID()][$TaskId]);
 	}
 
 	/**
