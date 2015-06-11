@@ -95,7 +95,7 @@ class Response extends Responder{
 	    $this->addTask(t\ReplaceWithTask::create($sDestination, $sContent));
 	    return $this;
 	}
-	public function when($condition, t\AbstractTask $true, t\AbstractTask $false = NULL){
+	public function when($condition, Task $true, Task $false = NULL){
 	    $this->addTask(t\WhenTask::create($condition, $true, $false));
 	    return $this;
 	}

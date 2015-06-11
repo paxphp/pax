@@ -1,5 +1,5 @@
 <?php
-namespace Pax\Tasks;
+namespace Pax;
 
 trait TaskTrait{
 

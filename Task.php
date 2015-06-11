@@ -1,7 +1,7 @@
 <?php
-namespace Pax\Tasks;
+namespace Pax;
 
-abstract class AbstractTask{
+class Task{
     
     use TaskTrait;
 

@@ -50,11 +50,11 @@ abstract class Responder{
 	 * @return Task
 	 */
 	protected function addTask($mParams = [], $sAction=null){
-	    if(is_object($mParams) && get_parent_class($mParams) == 'Pax\Tasks\AbstractTask'){
+	    if(is_object($mParams) && get_parent_class($mParams) == 'Pax\Task'){
 	        $this->aTasks[$this->getID()][$mParams->_id] = $mParams;
 	        return $mParams;
 	    }elseif(is_array($mParams)){
-	        $oTask = \Pax\Tasks\PaxTask::create();
+	        $oTask = \Pax\Task::create();
 	        $oTask->_do = (is_null($sAction)?debug_backtrace()[1]['function']:$sAction);
 	        $oTask->applyParams((count($mParams)?$mParams:debug_backtrace()[1]['args']));
 	        $this->aTasks[$this->getID()][$oTask->_id] = $oTask;
